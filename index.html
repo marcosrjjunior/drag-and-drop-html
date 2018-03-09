@@ -13,26 +13,31 @@
         <div class="container">
             <div class="item">
                 <h5>Clone/Put</h5>
+
                 <ul class="drag-sortable" id="list-one" data-type="clone" ondragover="dragAllowDrop(event)">
                     <li draggable="true">Marcos</li>
                     <li draggable="true">Roberto</li>
                     <li draggable="true">Jorge</li>
                     <li draggable="true">Junior</li>
                 </ul>
+
                 <button alt="serialize" onclick="printSerialize('list-one', 'innerHTML')">Serialize</button>
                 <small class="serialize-result"></small>
             </div>
 
             <div class="item">
                 <h5>Put/Pull</h5>
-                <ul class="drag-sortable" id="list-two" ondragover="dragAllowDrop(event)">
+
+                <ul class="drag-sortable" id="list-two" ondrop="handleDrop(event)" ondragover="dragAllowDrop(event)">
                     <li draggable="true">Junior</li>
                 </ul>
+
                 <button alt="serialize" onclick="printSerialize('list-two', 'innerHTML')">Serialize</button>
                 <small class="serialize-result"></small>
             </div>
         </div>
 
+        <script src="./drag-drop-touch.js"></script>
         <script src="./main.js"></script>
     </body>
 </html>

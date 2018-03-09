@@ -57,6 +57,7 @@ function handleDrop(e) {
             dragSrcEl.innerHTML = e.target.innerHTML;
             e.target.innerHTML = e.dataTransfer.getData('text/plain');
         }
+
         return false;
     } 
 
@@ -65,9 +66,11 @@ function handleDrop(e) {
         dragSrcEl.remove();
     }
 
-    // other div
-    e.target.parentElement.insertAdjacentHTML('beforeend', e.dataTransfer.getData('text/html'));
+    // other div -- using drag-sortable when adding item on block
+    el = e.target.classList.contains('drag-sortable') ? e.target : e.target.parentElement;
+    el.insertAdjacentHTML('beforeend', e.dataTransfer.getData('text/html'));
     loadEvents(e.target.parentElement.lastElementChild);
+
     return true;
 
     // Don't do anything if dropping the same column we're dragging.
