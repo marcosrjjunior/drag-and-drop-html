@@ -1,28 +1,76 @@
+:root {
+  --main-bg-color: #D7DAFC;
+  --main-color: #666B9B;
+  --white-color: #FFFFFF;
+  --red-color: #d70909;
+}
+
+body {
+    font-family: monospace;
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fff;
+    border: .05rem solid var(--main-color);
+    border-radius: 3px;
+    color: var(--main-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: .8rem;
+    height: 1.8rem;
+    line-height: 1rem;
+    outline: 0;
+    padding: .35rem .4rem;
+    text-align: center;
+}
+
+button:hover {
+    background: #f1f1fc;
+    text-decoration: none;
+}
+
 ul {
+    background-color: var(--white-color);
     border: 1px solid;
     border-radius: 3px;
     box-shadow: 2px 2px 10px #00000038;
     font-size: 20px;
+    list-style: none;
+    margin-top: 2px;
     margin-bottom: 10px;
-    padding-top: 10px;
     padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 5px;
 }
 
-.container {
+img {
+    border-radius: 3px;
+}
+
+section {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-column-gap: 110px;
+    margin-bottom: 25px;
 }
 
-h5 {
+h5, h4 {
     margin-bottom: 0px;
 }
 
-/* Drag styles */
-.over {
-    opacity: 0.3;
+.remove {
+    color: var(--red-color);
+    font-size: 15px;
+    float: right;
+    margin-right: 15px;
 }
 
+/* Drag styles */
 [draggable] {
     -moz-user-select: none;
     -khtml-user-select: none;
